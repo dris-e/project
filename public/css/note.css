@@ -1,0 +1,28 @@
+.note {
+    width: 200px;
+    min-height: 200px;
+    margin: 1rem 0 0 1rem;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    touch-action: none;
+    user-select: none;
+    transform: translate(0px, 0px);
+    text-align: left;
+    resize: none;
+    outline: none;
+}
+
+.text {
+    color: black;
+    resize: none;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <!-- <script src="https://kit.fontawesome.com/df3adde9b5.js" crossorigin="anonymous"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
+        <link rel="stylesheet" href="web4.css">
+        <script type="text/javascript" src="web4.js"></script>
+    </head>
+    <body onload="loadCookies()">
+        <div id="full-body">
+            <div id="text-container">
+                <h1>Morse Code</h1>
+                <hr>
+                <p>Press any keys on your keyboard to begin.</p>
+            </div>
+            <div class="container-output">
+                <textarea id="text-output" class="output" disabled></textarea>
+            </div>
+            <div class="container-output">
+                <textarea id="translate-output" class="output" disabled></textarea>
+            </div>
+                <h1 id="duration-output"></h1>
+
+                <div id="mode-div" class="button">
+                    <input onchange="checkMode()" type="checkbox" id="mode" name="mode">  
+                    <label for="mode">Beginner mode</label>
+                </div>
+                <div id="dur-div" class="button">
+                    <input onchange="checkMode()" type="checkbox" id="dur" name="dur">  
+                    <label for="dur">Duration</label>
+                </div>
+
+            <div id="settings-2" class="container">
+                <button onclick="resetCookies(); window.location.reload();" id="reset-cookies" class="button">Reset</button>
+                <button onclick="window.location.reload()" id="translate" class="button">Translate</button>
+            </div>
+            <div id="background-2"></div>
+            <div id="main-background" class="background"></div>
+        </div>
+    </body>
+</html>

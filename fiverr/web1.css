@@ -1,0 +1,129 @@
+body {
+    position: relative;
+    overflow-x: hidden;
+    max-width: 100%;
+    margin: 0;
+    display:inline-block;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+#fullBody {
+    position: absolute;
+}
+
+.background {
+    pointer-events: none;
+    position: relative;
+    height: 75vh;
+    width: 100vw;
+    background-color: white;
+    z-index: -1;
+}
+
+#splitBackground {
+    pointer-events: none;
+    margin-top: -75vh;
+    background-image: url(clouds.jpeg);
+    z-index: -1;
+    width: 100%;
+    box-sizing: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    scale: 1.1;
+    height: 75vh;
+}
+
+#header {
+    overflow: hidden;
+    padding: 2vw 1vw;
+    min-width: 30%;
+    position: absolute;
+    font-weight: bold;
+}
+
+#header a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 2vh;
+    padding-top: 0vh;
+    padding-left: 5vw;
+    text-decoration: none;
+    font-size: 2.5vh; 
+    line-height: 3vh;
+}
+
+#headerText {
+    font-size: 4vh;
+    line-height: 3vh;
+    margin-left: -5vw;
+}
+
+.container {
+    position: absolute;
+    color: white;
+}
+
+#panel1{
+    transform: translate(60vw, 20vh);
+}
+
+.titleText {
+    font-size: 6vh;
+}
+
+.pText {
+    font-size: 2.5vh;
+}
+
+.externalButton {
+    background-color: white;
+    color: black;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    text-align: center;
+    padding: 1.5vh;
+    font-size: 2vh;
+}
+
+#background2 {
+    background-color: black;
+    padding-top: -50vh;
+    z-index: -1;
+    height: 100vh;
+    pointer-events: none;
+}
+
+.panelText {
+    transform: translate(7vw, 77vh);
+    text-align: left;
+    color: black;
+    pointer-events: none;
+
+}
+
+#startText {
+    font-size: 4vh;
+    margin-top: -23vh;
+}
+
+#aboutText {
+    text-align: right;
+    width: 50vw;
+    margin-top: 13vh;
+    transform: translate(35vw, -20vh);
+}
+
+.fa-rocket {
+    scale: 20;
+    transform: translate(-2.3vw, -.8vh);
+    opacity: 80%;
+}
+
+

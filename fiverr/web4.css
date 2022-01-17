@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;500;900&display=swap');
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    max-width: 100%;
+    margin: 0;
+    display: inline-block;
+    font-family: 'Darker Grotesque', sans-serif;
+}
+
+#full-body {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    color: #3a3a3a;
+}
+
+#main-background {
+    pointer-events: none;
+    background: #3a3a3a url(sand-dune.png);
+    z-index: -1;
+    scale: 1.1;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
+#background-2 {
+    position: absolute;
+    z-index: 1;
+    background-color: #e4e4e4;
+    box-shadow: 20px 20px 12px rgba(0, 0, 0, 0.3);
+    transform: translate(21.5vw, 12.5vh);
+    height: 70vh;
+    width: 57.5vw;
+    border-radius: 2vh;
+    float: center;
+}
+
+#text-container {
+    position: absolute;
+    z-index: 2;
+    float: right;
+    text-align: right;
+    transform: translate(45vw, 10vh);
+    font-size: 3vh;
+}
+
+hr {
+    float: right;
+    border: 3px solid #3a3a3a;
+    margin-top: -3vh;
+    width: 30vw;
+}
+
+.container-output {
+    position: absolute;
+    z-index: 2;
+}
+
+.container {
+    position: absolute;
+    z-index: 2;
+}
+
+.output {
+    font-family: 'Darker Grotesque', sans-serif;
+    background-color: #e4e4e4; 
+    color: #3a3a3a;
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+    border: none;
+    border-color: #3a3a3a;
+    border-width: 5px;
+    border-style: dashed;
+}
+
+.button {
+    font-family: 'Darker Grotesque', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    background-color: #3a3a3a; 
+    color: #e4e4e4;
+    outline: none;
+    border: none;
+    width: 10vw;
+    font-size: 2vh;
+    margin: 1vh;
+}
+
+#settings-2 {
+    transform: translate(27.5vw, 50vh);
+}
+
+#mode-div {
+    position: absolute;
+    z-index: 2;
+    transform: translate(50vw, 50vh);
+    height: 3.25vh;
+}
+
+#dur-div {
+    position: absolute;
+    z-index: 2;
+    transform: translate(61.5vw, 50vh);
+    height: 3.25vh;
+}
+
+#text-output {
+    transform: translate(25vw, 33vh);
+    border-style: solid;
+    font-size: 4vh;
+    padding: 5%;
+    width: 45vw;
+    height: 15vh;
+}
+
+#translate-output {
+    transform: translate(25vw, 61vh);
+    font-size: 3vh;
+    padding: 2%;
+    height: 12.5vh;
+    width: 47.5vw;
+} 
+
+#duration-output {
+    position: absolute;
+    z-index: 2;
+    transform: translate(27.5vw, 12.5vh);
+    font-size: 7vh;
+}

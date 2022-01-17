@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <!-- <script src="https://kit.fontawesome.com/df3adde9b5.js" crossorigin="anonymous"></script> -->
+        <link rel="stylesheet" href="web3.css">
+        <script type="text/javascript" src="web3.js"></script>
+    </head>
+    <body onload="loadCookies('task', 'textarea', 'container')">
+        <div id="full-body">
+            <div>
+                <div id="data-container">
+                    <div id="stat-container">
+                        <h1 id="total-text" class="text"></h1>
+                        <div id="perc-graph"></div>
+                        <!-- <h1 id="comp-text" class="text"></h1> -->
+                    </div>
+                    <textarea onchange="taskVal()" id="task-list" class="task"></textarea>
+                </div>
+            </div>
+            <div class="container" id="container">
+            </div>
+            <div id="control-panel">
+                <button onclick="addElem('task', addNum(), 'textarea', 'container')" id="add-button" class="button text">add</button>
+                <button onclick="resetCookie(); window.location.reload();" id="reset-button" class="button text">reset</button>
+                <button onclick="popElem(); window.location.reload();" id="finish-button" class="button text">finish</button>
+            </div>
+            <div id="main-background" class="background"></div>
+        </div>
+    </body>
+</html>
