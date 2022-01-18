@@ -9,7 +9,7 @@
         <script type="text/javascript" src="web5.js"></script>
         <title id="time-title">&#60;time&#62;</title>
     </head>
-    <body onload="loadCookies()">
+    <body>
         <div id="full-body">
 
             <div id="text-container">
@@ -18,7 +18,7 @@
 
             <div id="timer" class="container">
 
-                <h1 class="about-text">timer</h1>
+                <h1 class="about-text">&#60;timer&#62;</h1>
 
                 <h1 id="timer-countdown"></h1>
 
@@ -30,17 +30,17 @@
 
             <div id="container-input" class="container">
 
-                <h1 class="about-text">timer settings</h1>
+                <h1 class="about-text">&#60;timer&#62; settings</h1>
 
                 <div id="container-1">
                     <label for="interval-1">interval 1 : </label>
-                    <input id="interval-1" class="input" value="(minutes)"></input>
+                    <input onchange="getInterval('interval-1');" id="interval-1" class="input" placeholder="(minutes)"></input>
                 </div>
                 
 
                 <div id="container-2">
                     <label for="interval-2">interval 2 : </label>
-                    <input id="interval-2" class="input" value="(minutes)"></input>
+                    <input onchange="getInterval('interval-2');" id="interval-2" class="input" placeholder="(minutes)"></input>
                 </div>
 
             </div>
@@ -49,8 +49,8 @@
 
                 <h1 class="about-text">settings</h1>
 
-                <button onclick="ticker.start(); timerAnimation();" id="start-button">start</button>
-                <button onclick="ticker.stop()" id="pause-timer" class="button">pause</button>
+                <button onclick="ticker.start(); timerAnimation(); setDelay();" id="start-button">start</button>
+                <button onclick="ticker.stop(); document.getElementById('time-title').innerHTML = 'timer paused';" id="pause-timer" class="button">pause</button>
     
             </div>
 
@@ -58,6 +58,14 @@
 
                 <h1 class="about-text">about &#60;time&#62;</h1>
                 <p>&#60;time&#62; is built off of a time management system known as the pomodoro technique. it encourages people to work with the time they have—rather than against it. using this method, you break your workday into 25-minute chunks separated by five-minute breaks. these intervals are referred to as pomodoros. after about four pomodoros, you take a longer break of about 15 to 20 minutes.</p>
+
+            </div>
+
+            <div onmouseover="expandLog('7')" id="changelog" class="container">
+
+                <h1 class="about-text">changelog</h1>
+
+                <p id="changelog-text">update 1: did the whole thing<br>update 2: bug fixes and added changelog</p>
 
             </div>
 

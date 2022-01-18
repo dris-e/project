@@ -38,7 +38,7 @@ var doWork = function() {
     var timeStatus = document.getElementById("timer-status");
 
     var intervalOne = getInterval("interval-1") * 60;
-    var intervalTwo = getInterval("interval-2") * 60;
+    var intervalTwo = (getInterval("interval-2") * 60) + 1;
     console.log(intervalOne, intervalTwo);
 
 
@@ -86,7 +86,13 @@ var ticker = new AdjustInterval(doWork, 1000, error);
 
 var getInterval = function(id) {
     var elemVal = document.getElementById(id);
-    return elemVal.value;
+    var elem = elemVal.value;
+    if (elem === null || elem === "" || isNaN(elem) == true || parseInt(elem) === 0) {
+        elemVal.placeholder = "please enter a non-zero number!";
+        return 5;
+    } else {
+        return elemVal.value;
+    }
 };
 
 var timerAnimation = function() {
@@ -94,10 +100,34 @@ var timerAnimation = function() {
     var timerCount = document.getElementById("timer-countdown");
     var timerStatus = document.getElementById("timer-status");
     var textStatus = document.getElementById("status-text");
+    
     timerBox.style.height = "47vh";
     timerCount.style.opacity = "1";
     timerStatus.style.opacity = "1";
     textStatus.style.opacity = "1";
+}
+
+var setDelay = function() {
+    var startButton = document.getElementById("start-button");
+    setTimeout(function(){
+        startButton.disabled = false;
+        startButton.style.opacity = "100%";
+    }, 10000)
+    startButton.disabled = true;
+    startButton.style.opacity = "50%";
+}
+
+var expandLog = function(height) {
+    var changeLog = document.getElementById("changelog");
+    var logText = document.getElementById("changelog-text");
+
+    changeLog.style.height = height + "vh";
+    logText.style.opacity = "1";
+
+    changeLog.addEventListener("mouseleave", function(){
+        changeLog.style.height = "0vh";
+        logText.style.opacity = "0";
+    })
 }
 
 /* 
@@ -111,3 +141,6 @@ ticker.interval = 99;
 //add sound effects
 //add cookies
 //add animations and timer
+//add favicons and x/minimize on borders
+//make sure value isn't over 60 /done
+//option to add more intervals

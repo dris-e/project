@@ -112,4 +112,21 @@ button {
     line-height: 10%;
 }
 
+#start-button {
+    transition: opacity 1s;
+}
+
+#changelog {
+    height: 0vh;
+    z-index: 3;
+    margin-top: 0vh;
+    transition: height 1s;
+    transform: translate(95vw, 5vh);
+    scale: .8;
+}
+
+#changelog-text {
+    opacity: 0;
+    transition: opacity 1s;
+}
 
