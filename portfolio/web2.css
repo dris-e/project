@@ -116,7 +116,7 @@ hr {
     margin-left: 10vw;
     z-index: 0;
     transform: rotate(-0.05turn);
-    filter: drop-shadow(-30px -10px 100px #794bad);
+    box-shadow: (-60px, -30px, 100px, #794bad);
     opacity: 90%;
 }
 

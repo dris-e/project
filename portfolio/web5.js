@@ -36,6 +36,7 @@ var doWork = function() {
     var timeSec;
 
     var timeStatus = document.getElementById("timer-status");
+    var status;
 
     var intervalOne = getInterval("interval-1") * 60;
     var intervalTwo = (getInterval("interval-2") * 60);
@@ -59,7 +60,8 @@ var doWork = function() {
             work.play();
             work.fade(1.0, 0, 11000);
         }
-        timeStatus.innerHTML = "work";
+        status = "work";
+        timeStatus.innerHTML = status;
         numberTwo = 0;
     } else {
         numberTwo++;
@@ -76,10 +78,11 @@ var doWork = function() {
             rest.play();
             rest.fade(1.0, 0, 8000);
         }
-        timeStatus.innerHTML = "rest";
+        status = "rest";
+        timeStatus.innerHTML = status;
     }
     
-    document.getElementById("time-title").innerHTML = timeMin + ":" + timeSec;
+    document.getElementById("time-title").innerHTML = timeMin + ":" + timeSec + " | " + status;
     document.getElementById("timer-countdown").innerHTML = timeMin + ":" + timeSec;
 };
 
@@ -118,7 +121,7 @@ var setDelay = function() {
     setTimeout(function(){
         startButton.disabled = false;
         startButton.style.opacity = "100%";
-    }, 10000)
+    }, 5000)
     startButton.disabled = true;
     startButton.style.opacity = "50%";
 }
