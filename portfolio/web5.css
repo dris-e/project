@@ -100,12 +100,13 @@ button {
     font-weight: 900;
     font-size: 5vh;
     transform: translate(35vw, 10vh);
-    transition: height 1s;
+    transition: height 1s, width 1s;
 }
 
 #timer-countdown, #timer-status, #status-text {
     opacity: 0;
     transition: opacity 3s;
+    transition: font-size 1s;
 }
 
 #status-text, #timer-status {
@@ -118,11 +119,10 @@ button {
 
 #changelog {
     height: 0vh;
-    z-index: 3;
     margin-top: 0vh;
     transition: height 1s;
     transform: translate(95vw, 5vh);
-    scale: .8;
+    scale: 0.8;
 }
 
 #changelog-text {

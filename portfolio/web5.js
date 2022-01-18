@@ -38,7 +38,7 @@ var doWork = function() {
     var timeStatus = document.getElementById("timer-status");
 
     var intervalOne = getInterval("interval-1") * 60;
-    var intervalTwo = (getInterval("interval-2") * 60) + 1;
+    var intervalTwo = (getInterval("interval-2") * 60);
     console.log(intervalOne, intervalTwo);
 
 
@@ -55,6 +55,10 @@ var doWork = function() {
         if (timeSec < 10) {
             timeSec = "0" + Math.floor((intervalOne - number) % 60);
         }
+        if (intervalOne <= number) {
+            work.play();
+            work.fade(1.0, 0, 11000);
+        }
         timeStatus.innerHTML = "work";
         numberTwo = 0;
     } else {
@@ -69,6 +73,8 @@ var doWork = function() {
             number = 0;
             console.log("yeah");
             isSwitched = false;
+            rest.play();
+            rest.fade(1.0, 0, 8000);
         }
         timeStatus.innerHTML = "rest";
     }
@@ -129,6 +135,51 @@ var expandLog = function(height) {
         logText.style.opacity = "0";
     })
 }
+
+var changeMode = function(arg) {
+    var timer = document.getElementById("timer");
+    var timerCount = document.getElementById("timer-countdown");
+    var timerText = document.getElementById("timer-text");
+
+    if (arg === 1) {
+        timer.style.width = "97.5vw";
+        timer.style.height = "90.5%";
+        timer.style.transform = "translate(0vw, 0vh)"
+        timer.style.marginTop = "-1%";
+    
+        timerCount.style.fontSize = "20vh";
+        timerCount.style.transform = "translate(0%, 40%)";
+    
+        timerText.innerHTML = "&#60;timer&#62; (click window to minimize)";
+    } else if (arg === 2) {
+        timer.style.width = "30vw";
+        timer.style.height = "47vh";
+        timer.style.transform = "translate(35vw, 10vh)"
+        timer.style.marginTop = "0";
+
+        timerCount.style.fontSize = "10vh";
+        timerCount.style.transform = "";
+
+        timerText.innerHTML = "&#60;timer&#62;";
+    }
+
+
+    
+}
+
+
+var rest = new Howl({
+    src: ["rest.mp3"],
+    volume: 1.0,
+    fadeOut: 1.0,
+});
+
+var work = new Howl({
+    src: ["work.mp3"],
+    volume: 1.0,
+    fadeOut: 1.0,
+});
+
 
 /* 
 ticker.start();

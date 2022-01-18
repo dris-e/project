@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
         <!-- <script src="https://kit.fontawesome.com/df3adde9b5.js" crossorigin="anonymous"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
         <link rel="stylesheet" href="web5.css">
         <script type="text/javascript" src="web5.js"></script>
         <title id="time-title">&#60;time&#62;</title>
@@ -16,9 +17,9 @@
                 <h1>&#60;time&#62;</h1>
             </div>
 
-            <div id="timer" class="container">
+            <div ondblclick="changeMode(1)" onclick="changeMode(2)" id="timer" class="container">
 
-                <h1 class="about-text">&#60;timer&#62;</h1>
+                <h1 id="timer-text" class="about-text">&#60;timer&#62;</h1>
 
                 <h1 id="timer-countdown"></h1>
 
@@ -61,11 +62,11 @@
 
             </div>
 
-            <div onmouseover="expandLog('7')" id="changelog" class="container">
+            <div onmouseover="expandLog('9')" id="changelog" class="container">
 
                 <h1 class="about-text">changelog</h1>
 
-                <p id="changelog-text">update 1: did the whole thing<br>update 2: bug fixes and added changelog</p>
+                <p id="changelog-text">update 1: did the whole thing<br>update 2: bug fixes and added changelog<br>update 3: more bug fixes and added music</p>
 
             </div>
 
