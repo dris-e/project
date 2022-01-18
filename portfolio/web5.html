@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <!-- <script src="https://kit.fontawesome.com/df3adde9b5.js" crossorigin="anonymous"></script> -->
+        <link rel="stylesheet" href="web5.css">
+        <script type="text/javascript" src="web5.js"></script>
+        <title id="time-title">&#60;time&#62;</title>
+    </head>
+    <body onload="loadCookies()">
+        <div id="full-body">
+
+            <div id="text-container">
+                <h1>&#60;time&#62;</h1>
+            </div>
+
+            <div id="timer" class="container">
+
+                <h1 class="about-text">timer</h1>
+
+                <h1 id="timer-countdown"></h1>
+
+                <p id="status-text">status:</p>
+
+                <h1 id="timer-status"></h1>
+
+            </div>
+
+            <div id="container-input" class="container">
+
+                <h1 class="about-text">timer settings</h1>
+
+                <div id="container-1">
+                    <label for="interval-1">interval 1 : </label>
+                    <input id="interval-1" class="input" value="(minutes)"></input>
+                </div>
+                
+
+                <div id="container-2">
+                    <label for="interval-2">interval 2 : </label>
+                    <input id="interval-2" class="input" value="(minutes)"></input>
+                </div>
+
+            </div>
+
+            <div id="settings" class="container">
+
+                <h1 class="about-text">settings</h1>
+
+                <button onclick="ticker.start(); timerAnimation();" id="start-button">start</button>
+                <button onclick="ticker.stop()" id="pause-timer" class="button">pause</button>
+    
+            </div>
+
+            <div id="info-container" class="container">
+
+                <h1 class="about-text">about &#60;time&#62;</h1>
+                <p>&#60;time&#62; is built off of a time management system known as the pomodoro technique. it encourages people to work with the time they have—rather than against it. using this method, you break your workday into 25-minute chunks separated by five-minute breaks. these intervals are referred to as pomodoros. after about four pomodoros, you take a longer break of about 15 to 20 minutes.</p>
+
+            </div>
+
+            <div id="main-background" class="background"></div>
+
+        </div>
+    </body>
+</html>

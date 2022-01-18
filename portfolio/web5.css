@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;500;900&display=swap');
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    max-width: 100%;
+    margin: 0;
+    display: inline-block;
+    font-family: 'Darker Grotesque', sans-serif;
+}
+
+#full-body {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+}
+
+.background {
+    position: absolute;
+    pointer-events: none;
+    background-image: linear-gradient(45deg, #FFC0AD, #FFE19C);
+    z-index: -1;
+    scale: 1.1;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.container {
+    position: absolute;
+    width: 20vw;
+    height: auto;
+    padding: 2vh;
+    border-radius: 2vh;
+    color: #514f50;
+    background-color: #f6f2f1;
+    border-top-style: solid;
+    border-color: #eeeced;
+    border-width: 5vh;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+}
+
+input, button {
+    font-family: 'Darker Grotesque', sans-serif;
+    width: 100%;
+    text-align: center;
+    border: none;
+    outline: none;
+    border-radius: 1vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    font-size: 2vh;
+}
+
+button {
+    background-color: white;
+}
+
+#text-container {
+    position: absolute;
+    z-index: 0;
+    font-size: 15vh;
+    margin-top: -35vh;
+}
+
+#info-container {
+    transform: translate(70vw, 35vh);
+}
+
+.about-text {
+    margin-top: -7vh;
+    font-size: 3.5vh;
+    opacity: 0.7;
+    font-weight: 500;
+}
+
+#container-input {
+    transform: translate(5vw, 60vh);
+}
+
+#settings {
+    transform: translate(30vw, 70vh);
+}
+
+#timer {
+    position: absolute;
+    text-align: center;
+    width: 30vw;
+    height: 5vh;
+    z-index: 1;
+    font-weight: 900;
+    font-size: 5vh;
+    transform: translate(35vw, 10vh);
+    transition: height 1s;
+}
+
+#timer-countdown, #timer-status, #status-text {
+    opacity: 0;
+    transition: opacity 3s;
+}
+
+#status-text, #timer-status {
+    line-height: 10%;
+}
+
+
