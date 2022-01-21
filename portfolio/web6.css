@@ -80,6 +80,7 @@ html, body {
 }
 
 .container {
+    pointer-events: none;
     z-index: 2;
     position: absolute;
     margin-left: 130vw;

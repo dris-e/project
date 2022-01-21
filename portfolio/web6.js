@@ -20,14 +20,14 @@ window.onkeydown = function(e) {
 };
 
 
-function keepDark(arg, arg2) {
+function keepDark() {
     var j = 0;
     setTimeout(function() {        
         if (j < 100000) { 
             var color = document.getElementsByClassName("color");
             for (let i = 0; i < color.length; i++) {
-                color[i].style.backgroundColor = arg2;
-                color[i].style.boxShadow = arg;
+                color[i].style.backgroundColor = "#1F1F1F";
+                color[i].style.boxShadow = "0px 0px 20px rgba(209, 209, 209, 0.3)";
             }
             console.log("sus");
             keepDark();     
@@ -48,8 +48,6 @@ function switchGravity(arg, color) {
         var background = document.getElementById("light-background");
         background.style.opacity = "0%";
 
-        keepDark("0px 0px 20px rgba(31, 31, 31, 0.3)", "#D1D1D1");
-
         var backgroundTop = document.getElementById("background-top");
         backgroundTop.style.opacity = "0%";
 
@@ -63,7 +61,7 @@ function switchGravity(arg, color) {
         var background = document.getElementById("light-background");
         background.style.opacity = "100%";
 
-        keepDark("0px 0px 20px rgba(209, 209, 209, 0.3)", "#1F1F1F");
+        keepDark();
 
         var backgroundTop = document.getElementById("background-top");
         backgroundTop.style.opacity = "100%";
