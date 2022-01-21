@@ -68,8 +68,8 @@ html, body {
 #player {
     border-radius: 10%;
     scale: 0.5;
-    height: 100px;
-    width: 100px;
+    height: 12.2vh;
+    width: 12.2vh;
     margin-top: 44vh;
     margin-left: 46vw;
     background-color: #1F1F1F;
