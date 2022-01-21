@@ -137,6 +137,12 @@ function returnVar(var1, var2, var3) {
             gameText.innerHTML = "game over";
             gameText.style.opacity = "1";
             newGame.style.opacity = "1";
+
+            var touchTop = document.getElementById("touch-top");
+            var touchBottom = document.getElementById("touch-bottom");
+
+            touchTop.style.pointerEvents = "none";
+            touchBottom.style.pointerEvents = "none";
             window.onkeydown = function() {
             }
             break;
