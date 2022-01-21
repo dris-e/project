@@ -9,6 +9,7 @@ html, body {
     margin: 0;
     display: inline-block;
     font-family: 'Darker Grotesque', sans-serif;
+    pointer-events: none;
 }
 
 #full-body {
@@ -75,7 +76,7 @@ html, body {
     box-shadow: 0px 0px 20px #D1D1D1;
     color: black;
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     transition: margin-top 0.5s, background-color 0.5s;
 }
 
@@ -145,6 +146,7 @@ h1 {
     text-align: center;
     font-weight: bold;
     transition: opacity 1.5s;
+    pointer-events: all;
 }
 
 #new-button {
@@ -165,4 +167,21 @@ h1 {
     float: left;
     text-align: left;
     z-index: 2;
+}
+
+#touch-top {
+    pointer-events: all;
+    z-index: 10;
+    background-image: linear-gradient(blue 0 0);
+    height: 50vh;
+    opacity: 0;
+} 
+
+#touch-bottom {
+    pointer-events: all;
+    z-index: 10;
+    background-image: linear-gradient(red 0 0);
+    height: 50vh;
+    margin-top: 50vh;
+    opacity: 0;
 }
