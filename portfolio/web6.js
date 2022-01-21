@@ -56,7 +56,7 @@ function keepDark() {
 function switchGravity(arg, color) {
     arg.style.animationName = "switch";
     arg.style.animationDuration = "0.5s";
-    setTimeout(function(){arg.style.animationName = "";}, 500)
+    setTimeout(function(){arg.style.animationName = "";}, 500);
 
     if (color === "light") {
         arg.style.backgroundColor = "#D1D1D1";
@@ -148,13 +148,19 @@ function returnVar(var1, var2, var3) {
             break;
         }
 
+        var player = document.getElementById("player");
+
         if (elem1.right < elem2.left || elem2.right < elem1.left) {
         } else if (elem1.bottom < elem2.top || elem2.bottom < elem1.top) {
         } else {
             y--;
+            player.style.backgroundColor = "#FF6F59";
             livesText.style.scale = "1.2";
             livesText.style.transform = "rotate(5deg)";
             setTimeout(function(){livesText.style.scale = "1"; livesText.style.transform = "rotate(0deg)";}, 700);
+            player.style.animationName = "switch";
+            player.style.animationDuration = "0.5s";
+            setTimeout(function(){arg.style.animationName = ""; player.style.backgroundColor = "auto";}, 500);
         }
 
         if (elem1.right < elem3.left || elem3.right < elem1.left) {
