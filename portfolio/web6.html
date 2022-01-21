@@ -7,22 +7,24 @@
         <link rel="stylesheet" href="web6.css">
         <script type="text/javascript" src="web6.js"></script>
     </head>
-    <body onload="changeColor()">
+    <body onload="runFunctions();">
         <div id="full-body">
-            <div id="player">
-                <h1 id="player-text">dsads</h1>
+            <div id="player"></div>
+            <h1 id="title-text">gravitySwap</h1>
+            <h1 id="points-text">score: 0</h1>
+            <h1 id="lives-text">lives: 3</h1>
+            <h1 id="game-text"></h1>
+            <button id="new-button" class="button" onclick="window.location.reload();">new game</button>
+            <!-- <button id="pause-button" class="button">pause</button> -->
+            <div id="mainContainer">
+
             </div>
-
-
-                <div id="container-1" class="container">
-                    <div id="color1" class="color"></div>
-                    <div id="color2" class="color"></div>
-                    <div id="color3" class="color"></div>
-                    <div id="color4" class="color"></div>
-                </div>
-
-
-            <div id="main-background" class="background"></div>
+            <div id="background-top2" class="background"></div>
+            <div id="background-bottom2" class="background"></div>
+            <div id="background-top" class="background"></div>
+            <div id="background-bottom" class="background"></div>
+            <div id="light-background" class="background"></div>
+            <div id="dark-background" class="background"></div>
         </div>
     </body>
 </html>

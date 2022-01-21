@@ -1,10 +1,14 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;500;900&display=swap');
+
+html, body {
     position: relative;
     overflow-x: hidden;
     overflow-y: hidden;
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
     margin: 0;
     display: inline-block;
+    font-family: 'Darker Grotesque', sans-serif;
 }
 
 #full-body {
@@ -13,26 +17,151 @@ body {
     height: 100vh;
 }
 
+.background {
+    position: absolute;
+    pointer-events: none;
+    background-image: linear-gradient(90deg, #D1D1D1, #E0E0E0);
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+#dark-background {
+    background-image: linear-gradient(90deg, #1F1F1F, #292929);
+    z-index: -2;
+}
+
+#background-top, #background-top2 {
+    background-image: linear-gradient(#1F1F1F 0 0);
+    box-shadow: 0px 0px 100px #1F1F1F;
+    height: 20vh;
+    z-index: 1;
+    transition: opacity 0.3s;
+}
+
+#background-bottom, #background-bottom2 {
+    background-image: linear-gradient(#D1D1D1 0 0);
+    box-shadow: 0px 0px 100px #8F8F8F;
+    margin-top: 80vh;
+    height: 30vh;
+    z-index: 1;
+    transition: opacity 0.3s;
+}
+
+#background-top2 {
+    background-image: linear-gradient(#D1D1D1 0 0);
+    box-shadow: 0px 0px 100px #8F8F8F;
+}
+
+#background-bottom2 {
+    background-image: linear-gradient(#1F1F1F 0 0);
+    box-shadow: 0px 0px 100px #1F1F1F;
+}
+
 #player {
+    border-radius: 10%;
+    scale: 0.5;
     height: 100px;
     width: 100px;
-    margin-top: 0%;
-    transform: translate(10vw, 10vh);
-    background-color: black;
+    margin-top: 44vh;
+    margin-left: 46vw;
+    background-color: #1F1F1F;
+    box-shadow: 0px 0px 20px #D1D1D1;
     color: black;
     position: absolute;
-    transition: transform 0.1s;
+    z-index: 2;
+    transition: margin-top 0.5s, background-color 0.5s;
 }
 
 .container {
-    margin-left: 20vw;
-    display: inline-block;
+    z-index: 2;
+    position: absolute;
+    margin-left: 130vw;
+    transition: margin-left 5s;
 }
 
 .color {
-    width: 10vh;
+    pointer-events: none;
+    border-radius: 1vh;
+    width: 20vw;
     margin: 3vh;
-    flex: 1;
-    height: 20vh;
-    background-color: black;
+    margin-right: 30vh;
+    height: 45vh;
+    color: white;
+    background-color: #D1D1D1;
+    box-shadow: 0px 0px 20px rgba(31, 31, 31, 0.3);
+    transition: background-color 0.3s;
+}
+
+@keyframes switch {
+    0% {transform: rotate(0deg);}
+    20% {transform: rotate(10deg);}
+    50% {transform: rotate(60deg);}
+    70% {transform: rotate(220deg);}
+    80% {transform: rotate(10deg);}
+    100% {transform: rotate(0deg);}
+}
+
+h1 {
+    position: absolute;
+    text-align: center;
+    margin: 3vh 0vw 2vh 2vw;
+    font-size: 5vh;
+    z-index: 5;
+    color: white;
+    text-shadow: 0px 0px 10px rgba(31, 31, 31, 0.3);
+    transition: scale 0.3s, transform 0.3s;
+}
+
+#lives-text {
+    margin-top: 10vh;
+}
+
+#game-text {
+    margin-top: 32vh;
+    margin-left: 40vw;
+    font-size: 20vh;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.button {
+    position: absolute;
+    z-index: 0;
+    padding: 1vh 2vw 1vh 2vw;
+    font-size: 4vh;
+    border: none;
+    outline: none;
+    border-radius: 1vh;
+    font-family: 'Darker Grotesque', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    transition: opacity 1.5s;
+}
+
+#new-button {
+    opacity: 0;
+    margin-top: 56vh;
+    margin-left: 46vw;  
+}
+
+#pause-button {
+    z-index: 5;
+}
+
+#title-text {
+    color: #D1D1D1;
+    text-shadow: none;
+    font-size: 8vh;
+    margin-left: 75vw;
+    float: left;
+    text-align: left;
+    z-index: 2;
 }

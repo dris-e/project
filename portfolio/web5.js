@@ -164,10 +164,7 @@ var changeMode = function(arg) {
         timerCount.style.transform = "";
 
         timerText.innerHTML = "&#60;timer&#62;";
-    }
-
-
-    
+    } 
 }
 
 
