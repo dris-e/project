@@ -4,13 +4,15 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
         <link rel="stylesheet" href="web6.css">
         <script type="text/javascript" src="web6.js"></script>
     </head>
-    <body onload="runFunctions();">
+    <body onload="loadCookies(); runFunctions(); soundtrack.play();">
         <div id="full-body">
             <div id="player"></div>
             <h1 id="title-text">gravitySwap</h1>
+            <h1 id="high-score">high score</h1>
             <h1 id="points-text">score: 0</h1>
             <h1 id="lives-text">lives: 3</h1>
             <h1 id="game-text"></h1>

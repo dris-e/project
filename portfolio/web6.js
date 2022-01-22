@@ -8,15 +8,18 @@ window.onkeydown = function(e) {
 
     if (pressed[38] == true && pressed[40] == true || pressed[87] == true && pressed[83] == true) {
         player.style.marginTop = "44vh";
-        pressed = {}; 
+        swoosh.play();
+        pressed = {};
     } else if (pressed[38] == true || pressed[87] == true) {
         player.style.marginTop = "0vh";
+        swoosh.play();
         switchGravity(player, "light");
-        setTimeout(function(){player.style.animationName = "";}, 500)
+        setTimeout(function(){player.style.animationName = "";}, 500);
     } else if (pressed[40] == true || pressed[83] == true) {
         player.style.marginTop = "88vh";
+        swoosh.play();
         switchGravity(player, "dark");
-    } 
+    }
 };
 
 function touched(arg) {
@@ -27,16 +30,18 @@ function touched(arg) {
     console.log(pressed);
     if (pressed["top"] == true && pressed["bottom"] == true) {
         player.style.marginTop = "44vh";
+        swoosh.play();
         pressed = {}; 
     } else if (pressed["top"] == true) {
         player.style.marginTop = "0vh";
+        swoosh.play();
         switchGravity(player, "light");
     } else if (pressed["bottom"] == true) {
         player.style.marginTop = "88vh";
+        swoosh.play();
         switchGravity(player, "dark");
     }
-}
-
+};
 
 function keepDark() {
     var j = 0;
@@ -51,7 +56,7 @@ function keepDark() {
             j++;
         }
     }, 100)
-}
+};
 
 function switchGravity(arg, color) {
     arg.style.animationName = "switch";
@@ -86,7 +91,7 @@ function switchGravity(arg, color) {
         var backgroundBottom = document.getElementById("background-bottom");
         backgroundBottom.style.opacity = "100%";
     }
-}
+};
 
 function runFunctions() {
     var ranTime = Math.floor(Math.random() * 1000);
@@ -94,14 +99,14 @@ function runFunctions() {
         newElem();
         runFunctions();
     }, ranTime);
-}
+};
 
 var newArr;
 var x = 0;
 var y = 3;
 function returnVar(var1, var2, var3) {
     var newArr = var3;
-    setTimeout(function(){
+    setTimeout(function() {
         for (let i = 0; i < 1; i++) {
             if (!newArr) {
                 null;
@@ -120,7 +125,7 @@ function returnVar(var1, var2, var3) {
                 newArr.shift()
             }
         }
-    }, 100)
+    }, 100);
 
     for (let i = 0; i < var1; i++) {
         var elem1 = document.getElementById("player").getBoundingClientRect();
@@ -143,6 +148,18 @@ function returnVar(var1, var2, var3) {
 
             touchTop.style.pointerEvents = "none";
             touchBottom.style.pointerEvents = "none";
+
+            var highScore = document.getElementById("high-score");
+            highScore.style.opacity = "1";
+            var getScore = getCookie("highScore");
+            if (x > getScore) {
+                setCookie("highScore", x);
+            } else {
+            }
+
+            highScore.innerHTML = "high score: " + getCookie("highScore");
+
+            soundtrack.pause();
             window.onkeydown = function() {
             }
             break;
@@ -154,13 +171,14 @@ function returnVar(var1, var2, var3) {
         } else if (elem1.bottom < elem2.top || elem2.bottom < elem1.top) {
         } else {
             y--;
+            damage.play();
             player.style.backgroundColor = "#FF6F59";
             livesText.style.scale = "1.2";
             livesText.style.transform = "rotate(5deg)";
             setTimeout(function(){livesText.style.scale = "1"; livesText.style.transform = "rotate(0deg)";}, 700);
             player.style.animationName = "switch";
             player.style.animationDuration = "0.5s";
-            setTimeout(function(){arg.style.animationName = ""; player.style.backgroundColor = "auto";}, 500);
+            setTimeout(function(){player.style.animationName = ""; player.style.backgroundColor = "auto";}, 500);
         }
 
         if (elem1.right < elem3.left || elem3.right < elem1.left) {
@@ -183,7 +201,6 @@ function returnVar(var1, var2, var3) {
 
         pointsText.innerHTML = "score: " + x;
         livesText.innerHTML = "lives: " + y;
-
     }
 }
 
@@ -226,7 +243,7 @@ function newElem() {
     } else if (ranNum <= 20) {
         addElem(container, "color", divNum);
         document.getElementById("color" + divNum).style.marginTop = "0vh";
-    } 
+    }
 
     document.getElementById("color" + divNum).style.width = (ranNum / 2) + 10 + "vw";
 
@@ -239,4 +256,48 @@ function addElem(cont, name, num) {
     newElem.setAttribute("class", name);
     cont.appendChild(newElem);
     arr.push("color" + num);
+}
+
+var soundtrack = new Howl({
+    src: ["soundtrack.mp3"],
+    volume: 1.0,
+    loop: true,
+    autoplay: true,
+});
+
+var damage = new Howl({
+    src: ["damage.mp3"],
+    volume: 1.0,
+});
+
+var swoosh = new Howl({
+    src: ["woosh.mp3"],
+    volume: 0.6,
+});
+
+function loadCookies() {
+    var x = getCookie("highScore");
+    if (!x) {
+        setCookie("highScore", 0);
+    }
+
+}
+
+function setCookie(name, value) {
+    var expires = "";
+    var date = new Date();
+    date.setTime(date.getTime() + (1000*24*60*60*1000));
+    expires = "; expires=" + date.toUTCString();
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
 }

@@ -169,6 +169,17 @@ h1 {
     z-index: 2;
 }
 
+#high-score {
+    color: #D1D1D1;
+    margin-left: 75vw;
+    margin-top: 12vh;
+    opacity: 0;
+    float: left;
+    text-align: left;
+    z-index: 2;  
+    transition: opacity 1s;
+}
+
 #touch-top {
     pointer-events: all;
     z-index: 10;
